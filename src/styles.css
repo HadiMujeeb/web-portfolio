@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+@layer components {
+  .glass-pill {
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-card {
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(25, 25, 25, 0.7);
+  }
+
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #ffffff, #666666, #ffffff, #333333);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0.6;
+    filter: blur(8px);
+    animation: pulseGlow 4s ease-in-out infinite;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Hover interactions — subtle white light, smooth and restrained.     */
+/* ------------------------------------------------------------------ */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer components {
+  /* Pointer-following light: soft glow inside + lit border (see Spotlight directive) */
+  .spotlight {
+    position: relative;
+  }
+  .spotlight::before,
+  .spotlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out);
+  }
+  .spotlight::before {
+    z-index: 1;
+    background: radial-gradient(
+      340px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(255, 255, 255, 0.07),
+      transparent 65%
+    );
+  }
+  .spotlight::after {
+    z-index: 2;
+    padding: 1px;
+    background: radial-gradient(
+      200px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(255, 255, 255, 0.55),
+      transparent 70%
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  }
+
+  /* White buttons: gentle lift, halo and a slow sheen that sweeps across */
+  .fx-primary {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out),
+      background-color 0.3s ease;
+  }
+  .fx-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(110deg, transparent 35%, rgba(0, 0, 0, 0.09) 50%, transparent 65%);
+    transform: translateX(-120%);
+    transition: transform 0.9s var(--ease-out);
+  }
+  .fx-primary i {
+    transition: transform 0.4s var(--ease-out);
+  }
+  .fx-primary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Skill chips: border and icon brighten, chip rises a hair */
+  .chip-fx {
+    transition: transform 0.35s var(--ease-out), border-color 0.35s ease,
+      background-color 0.35s ease, color 0.35s ease;
+  }
+  .chip-fx svg {
+    transition: transform 0.4s var(--ease-out), color 0.35s ease;
+  }
+
+  /* Text links: underline draws in, arrow nudges diagonally */
+  .link-fx {
+    position: relative;
+  }
+  .link-fx::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 1px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s var(--ease-out);
+  }
+  .link-fx i {
+    transition: transform 0.35s var(--ease-out);
+  }
+
+  @media (hover: hover) {
+    .spotlight:hover::before,
+    .spotlight:hover::after,
+    .spotlight:focus-visible::before,
+    .spotlight:focus-visible::after {
+      opacity: 1;
+    }
+
+    .fx-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px -10px rgba(255, 255, 255, 0.45);
+    }
+    .fx-primary:hover::after {
+      transform: translateX(120%);
+    }
+    .fx-primary:hover i {
+      transform: translateX(3px);
+    }
+
+    .chip-fx:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.06);
+      color: #fff;
+    }
+    .chip-fx:hover svg {
+      color: #fff;
+      transform: scale(1.12);
+    }
+
+    .link-fx:hover::after {
+      transform: scaleX(1);
+    }
+    .link-fx:hover i {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spotlight::before,
+    .spotlight::after,
+    .fx-primary,
+    .fx-primary::after,
+    .chip-fx,
+    .chip-fx svg,
+    .link-fx::after,
+    .link-fx i {
+      transition: none !important;
+    }
+    .fx-primary:hover,
+    .chip-fx:hover {
+      transform: none !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Starfield background                                                */
+/* ------------------------------------------------------------------ */
+.starfield-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  pointer-events: none;
+  display: block;
+}

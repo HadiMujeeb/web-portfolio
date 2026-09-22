@@ -1,0 +1,19 @@
+<section id="education" class="py-24 px-6 border-t border-neutral-900">
+  <div class="max-w-4xl mx-auto">
+    <app-section-heading eyebrow="Academics" title="Education" />
+
+    <div class="space-y-8">
+      @for (item of items; track item.title) {
+        <div appSpotlight class="glass-card p-8 rounded-3xl relative border-l-2" [class]="item.accent">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+            <div>
+              <h4 class="text-xl font-bold text-white">{{ item.title }}</h4>
+              <p class="text-sm text-neutral-400 mt-0.5">{{ item.institution }}</p>
+            </div>
+            <span class="inline-block mt-2 sm:mt-0 px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-300 w-fit">{{ item.period }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

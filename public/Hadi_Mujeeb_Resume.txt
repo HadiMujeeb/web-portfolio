@@ -1,0 +1,56 @@
+HADI MUJEEB
+MEAN Stack Developer
+
+PROFILE SUMMARY
+Passionate MEAN Stack Developer with 1+ year of experience building scalable web applications using Angular, Node.js, Express.js, and MongoDB. Skilled in RESTful APIs, real-time features, authentication systems, and payment integrations. Experienced in ERP and production-grade applications within onsite and remote team environments, with a strong focus on clean code, performance optimization, and scalable solutions.
+
+TECHNICAL SKILLS
+Languages: JavaScript, TypeScript, HTML5, CSS3, SQL, C (Basics)
+Frontend: Angular, Tailwind CSS, Bootstrap, Responsive Design
+Backend: Node.js, Express.js, REST APIs, WebSocket, WebRTC
+Databases: MongoDB, PostgreSQL, MySQL
+Cloud & Deployment: AWS (EC2, S3), Vercel, Nginx
+Tools: Git, GitHub, GitHub Actions, Postman
+Architecture: MVC Architecture, Clean Architecture
+
+PROFESSIONAL EXPERIENCE
+
+MEAN Stack Developer
+Synram Software Services Pvt Ltd
+Jun 2025 – Present | Madhya Pradesh, India (Onsite & Remote)
+- Contributed to ERP-based enterprise application development within a collaborative team.
+- Upgraded multiple Angular projects to newer versions while maintaining module compatibility.
+- Improved Angular performance using lazy loading, OnPush change detection, and trackBy.
+- Developed modules, features, and reusable components based on business requirements.
+- Integrated RESTful APIs with backend services for stable and scalable applications.
+
+MEAN Stack Developer
+Brototype
+Oct 2023 – Mar 2025 | Kerala, India
+- Completed intensive project-based training focused on MEAN stack technologies.
+- Built multiple full-stack web applications using Angular, Node.js, Express.js, and MongoDB.
+- Developed backend APIs and implemented authentication systems.
+- Integrated payment gateways and cloud-based image storage.
+- Collaborated on team projects and code reviews.
+
+PROJECTS
+
+SpeakElse – Real-Time Communication Platform
+- Built real-time video/audio communication using WebRTC and Socket.IO.
+- Implemented authentication, Razorpay payments, and cloud image uploads.
+- Deployed backend on AWS and frontend on Vercel.
+- Tech Stack: Angular, Node.js, Express.js, MongoDB, WebRTC, Socket.IO, Razorpay
+
+Sofazon – E-Commerce Web Application
+- Developed full-stack e-commerce platform with authentication, cart, and order management.
+- Built admin dashboard and integrated Razorpay payment gateway.
+- Tech Stack: Node.js, Express.js, MongoDB, Bootstrap
+
+EDUCATION
+Bachelor of Computer Applications (BCA)
+Manipal University Jaipur
+2026 – Expected 2029
+
+MEAN Stack Web Development
+Brototype, Kerala
+Oct 2023 – Mar 2025

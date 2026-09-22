@@ -1,0 +1,20 @@
+<footer class="py-12 px-6 border-t border-neutral-900 text-center text-sm text-neutral-500">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="flex items-center space-x-2">
+      <div class="w-6 h-6 rounded-full bg-white text-black font-bold flex items-center justify-center text-xs">{{ profile.initials }}</div>
+      <span class="font-medium text-white">{{ profile.name }}</span>
+    </div>
+    <p>© {{ profile.year }} {{ profile.name }}. All rights reserved.</p>
+    <div class="flex items-center space-x-2 text-lg text-neutral-400">
+      @for (social of socials; track social.label) {
+        <a [href]="social.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="social.label" class="group relative flex items-center justify-center w-10 h-10 rounded-full hover:text-white transition-colors duration-300">
+          <!-- white disc grows in behind the icon -->
+          <span class="absolute inset-0 rounded-full bg-white/10 scale-50 opacity-0 transition duration-500 ease-out group-hover:scale-100 group-hover:opacity-100"></span>
+          <!-- fine ring settles around the disc -->
+          <span class="absolute -inset-1 rounded-full border border-white/25 scale-90 opacity-0 transition duration-500 ease-out group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100"></span>
+          <i [class]="social.icon" class="relative transition-transform duration-300 group-hover:-translate-y-0.5"></i>
+        </a>
+      }
+    </div>
+  </div>
+</footer>

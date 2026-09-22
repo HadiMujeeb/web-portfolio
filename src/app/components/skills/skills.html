@@ -1,0 +1,32 @@
+<section id="skills" class="py-24 px-6 border-t border-neutral-900 bg-neutral-950/40">
+  <div class="max-w-6xl mx-auto">
+    <app-section-heading
+      eyebrow="Expertise"
+      title="Technical Arsenal"
+      subtitle="Languages, frameworks, and tools I use to ship ERP and production-grade MEAN stack applications."
+    />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      @for (group of groups; track group.title) {
+        <div appSpotlight class="group glass-card p-6 rounded-3xl space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white transition duration-500 group-hover:bg-white/20 group-hover:scale-105">
+              <i [class]="group.icon"></i>
+            </div>
+            <h4 class="font-semibold text-white">{{ group.title }}</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            @for (skill of group.items; track skill.name) {
+              <span class="chip-fx inline-flex items-center gap-2 pl-2.5 pr-3 py-1.5 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-300 cursor-default">
+                <svg viewBox="0 0 24 24" class="size-3.5 shrink-0 fill-current text-neutral-400" aria-hidden="true" focusable="false">
+                  <path [attr.d]="iconPath(skill.icon)" />
+                </svg>
+                {{ skill.name }}
+              </span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
