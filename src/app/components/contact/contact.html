@@ -1,0 +1,33 @@
+<section id="contact" class="py-24 px-6 border-t border-neutral-900 bg-neutral-950/40">
+  <div class="max-w-4xl mx-auto">
+    <app-section-heading
+      eyebrow="Get Connected"
+      title="Let's Build Something Together"
+      subtitle="Have a project in mind or want to discuss full stack / AI engineering opportunities? Drop a message below."
+    />
+
+    <form (submit)="onSubmit($event)" class="glass-card p-8 sm:p-12 rounded-3xl space-y-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="space-y-2">
+          <label for="contact-name" class="text-xs text-neutral-400 font-medium">Your Name</label>
+          <input id="contact-name" type="text" required placeholder="John Doe" class="w-full bg-neutral-900 border border-neutral-800 rounded-2xl px-4 py-3 text-white placeholder-neutral-600 hover:border-neutral-700 focus:outline-none focus:border-white focus:ring-4 focus:ring-white/10 transition text-sm" />
+        </div>
+        <div class="space-y-2">
+          <label for="contact-email" class="text-xs text-neutral-400 font-medium">Your Email</label>
+          <input id="contact-email" type="email" required placeholder="john&#64;example.com" class="w-full bg-neutral-900 border border-neutral-800 rounded-2xl px-4 py-3 text-white placeholder-neutral-600 hover:border-neutral-700 focus:outline-none focus:border-white focus:ring-4 focus:ring-white/10 transition text-sm" />
+        </div>
+      </div>
+      <div class="space-y-2">
+        <label for="contact-subject" class="text-xs text-neutral-400 font-medium">Subject</label>
+        <input id="contact-subject" type="text" required placeholder="Project Inquiry / Opportunity" class="w-full bg-neutral-900 border border-neutral-800 rounded-2xl px-4 py-3 text-white placeholder-neutral-600 hover:border-neutral-700 focus:outline-none focus:border-white focus:ring-4 focus:ring-white/10 transition text-sm" />
+      </div>
+      <div class="space-y-2">
+        <label for="contact-message" class="text-xs text-neutral-400 font-medium">Message</label>
+        <textarea id="contact-message" rows="5" required placeholder="Tell me about your project or role..." class="w-full bg-neutral-900 border border-neutral-800 rounded-2xl px-4 py-3 text-white placeholder-neutral-600 hover:border-neutral-700 focus:outline-none focus:border-white focus:ring-4 focus:ring-white/10 transition text-sm resize-none"></textarea>
+      </div>
+      <button type="submit" class="fx-primary w-full py-4 rounded-2xl bg-white text-black font-bold text-sm hover:bg-neutral-200 shadow-lg">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
